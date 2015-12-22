@@ -12,7 +12,7 @@
     <!-- endinject -->
   </head>
   <body>
-    <div ui-view></div>
+    <ui-view></ui-view>
     
     <!-- bower:js -->
     <script src="vendor/angular/angular.js"></script>
@@ -25,6 +25,7 @@
     <!-- inject:js -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/Factory/redirectWhenLoggedOut.js"></script>
+    <script src="/scripts/config/routes.js"></script>
     <script src="/scripts/services/stateChangeStart.js"></script>
     <script src="/scripts/controllers/auth/AuthController.js"></script>
     <script src="/scripts/controllers/auth/LogoutController.js"></script>

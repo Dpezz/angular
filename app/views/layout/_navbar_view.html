@@ -31,14 +31,14 @@
         </md-button>
         <md-menu-content>
           <md-menu-item>
-            <md-button ng-click="ctrl.sampleAction('share', $event)">
+            <md-button ng-href="#/account">
               Account
               <span class="md-alt-text"><md-icon class="material-icons md-light md-48"> account_circle </md-icon></span>
             </md-button>
           </md-menu-item>
           <md-menu-divider></md-menu-divider>
           <md-menu-item>
-            <md-button ng-click="ctrl.sampleAction('share', $event)">
+            <md-button ng-href="#/account">
               Password
               <span class="md-alt-text"><md-icon class="material-icons md-light md-48"> lock </md-icon></span>
             </md-button>
@@ -68,6 +68,9 @@
       <span>Toolbar with Standard Buttons</span>
     </h2>
     <span flex></span>
+    <md-button class="md-fab md-mini" aria-label="Go Back">
+      <md-icon class="material-icons md-light md-48"> add </md-icon>
+    </md-button>
   </div>
 </md-toolbar>
 <!-- end sub-toolbar -->
@@ -93,6 +96,7 @@
 <!-- end sidenav-right -->
 
 <!-- content -->
-<md-content flex layout-padding>
-</md-content>
+
+<ui-view name="content" flex layout-padding></ui-view>
+
 <!-- end content -->
