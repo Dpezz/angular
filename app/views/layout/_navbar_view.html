@@ -1,0 +1,98 @@
+<!-- start toolbar -->
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Settings" ng-click="layout.toggleLeft()">
+      <md-icon class="material-icons md-light md-48"> menu </md-icon>
+    </md-button>
+    <h2>
+      <span>Toolbar</span>
+    </h2>
+    <span flex></span>
+
+    <!-- items menu -->
+    <md-button class="md-icon-button" aria-label="More" ng-click="layout.toggleRight()">
+      <md-icon class="material-icons md-light md-48"> search </md-icon>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More" ng-click="layout.toggleRight()">
+      <md-icon class="material-icons md-light md-48"> notifications </md-icon>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More" ng-click="layout.toggleRight()">
+      <md-icon class="material-icons md-light md-48"> inbox </md-icon>
+    </md-button>
+    <!-- end items -->
+
+    <img ng-src="http://semantic-ui.com/images/avatar2/large/kristy.png" class="md-avatar" width="48px" alt="{{item.who}}" style="border-radius:60px;margin-left:10px;" />
+
+    <!-- dropdown -->
+    <md-menu-bar>
+      <md-menu md-position-mode="target-right target" >
+        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+          <md-icon md-menu-origin class="material-icons md-light md-48"> arrow_drop_down </md-icon>
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>
+            <md-button ng-click="ctrl.sampleAction('share', $event)">
+              Account
+              <span class="md-alt-text"><md-icon class="material-icons md-light md-48"> account_circle </md-icon></span>
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="ctrl.sampleAction('share', $event)">
+              Password
+              <span class="md-alt-text"><md-icon class="material-icons md-light md-48"> lock </md-icon></span>
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-href="#/logout">
+            Close
+            <span class="md-alt-text"><md-icon class="material-icons md-light md-48"> exit_to_app </md-icon></span>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </md-menu-bar>
+    <!-- end dropdown -->
+  </div>
+</md-toolbar>
+<!-- end toolbar -->
+
+<!-- start sub-toolbar -->
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <md-button class="md-fab md-mini" aria-label="Go Back">
+      <md-icon class="material-icons md-light md-48"> chevron_left </md-icon>
+    </md-button>
+    <h2>
+      <span>Toolbar with Standard Buttons</span>
+    </h2>
+    <span flex></span>
+  </div>
+</md-toolbar>
+<!-- end sub-toolbar -->
+
+<!-- start sidenav-left -->
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+  <md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">Sidenav Left</h1>
+  </md-toolbar>
+  <md-content layout-padding >
+  </md-content>
+</md-sidenav>
+<!-- end sidenav-left -->
+
+<!-- start sidenav-right -->
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Sidenav Right</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+    </md-content>
+</md-sidenav>
+<!-- end sidenav-right -->
+
+<!-- content -->
+<md-content flex layout-padding>
+</md-content>
+<!-- end content -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendor/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body>
+    <div ui-view></div>
+    
+    <!-- bower:js -->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/satellizer/satellizer.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/angular-animate/angular-animate.js"></script>
+    <script src="vendor/angular-aria/angular-aria.js"></script>
+    <script src="vendor/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/Factory/redirectWhenLoggedOut.js"></script>
+    <script src="/scripts/services/stateChangeStart.js"></script>
+    <script src="/scripts/controllers/auth/AuthController.js"></script>
+    <script src="/scripts/controllers/auth/LogoutController.js"></script>
+    <script src="/scripts/controllers/auth/SignUpController.js"></script>
+    <script src="/scripts/controllers/layout/LayoutController.js"></script>
+    <script src="/scripts/controllers/secured/AccountController.js"></script>
+    <!-- endinject -->
+  </body>
+</html>
