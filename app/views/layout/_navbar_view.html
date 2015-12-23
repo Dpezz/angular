@@ -61,14 +61,17 @@
 <!-- start sub-toolbar -->
 <md-toolbar>
   <div class="md-toolbar-tools">
-    <md-button class="md-fab md-mini" aria-label="Go Back">
+    <md-button class="md-fab md-mini" aria-label="Go Back" ng-show="layout.breadCrumb.isBack">
       <md-icon class="material-icons md-light md-48"> chevron_left </md-icon>
     </md-button>
     <h2>
-      <span>Toolbar with Standard Buttons</span>
+      <span>
+      <span ng-show="!layout.breadCrumb.isBack">&emsp;&emsp;</span>
+      {{layout.breadCrumb.label}}
+      </span>
     </h2>
     <span flex></span>
-    <md-button class="md-fab md-mini" aria-label="Go Back">
+    <md-button class="md-fab md-mini" aria-label="go New" ng-show="layout.breadCrumb.isNew">
       <md-icon class="material-icons md-light md-48"> add </md-icon>
     </md-button>
   </div>
