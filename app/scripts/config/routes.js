@@ -1,7 +1,8 @@
 angular
     .module("app")
-    .config(function($stateProvider) {
-        
+    .config(routes);
+
+    function routes($stateProvider) {
 		// Configuración de las rutas/estados
         $stateProvider
             .state("login", {
@@ -37,4 +38,4 @@ angular
                     }
                 }
             })
-    })
+    }
