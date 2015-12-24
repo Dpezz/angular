@@ -1,25 +1,34 @@
-<!-- Simple Textfield -->
-<div class="demo-card-square mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Iniciar Sesión</h2>
+<md-content layout-fill flex layout="row" layout-align="center center">
+  <div flex="30">
+    <md-card>
+      <img ng-src="http://dun4nx4d6jyre.cloudfront.net/assets/flat-color.png" class="md-card-image" alt="Washed Out" height="100px">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Iniciar Sesión</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <form>
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Email</label>
+              <input ng-model="auth.email" type="email">
+            </md-input-container>
+          </div>
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Password</label>
+              <input ng-model="auth.password" type="password">
+            </md-input-container>
+          </div>
+          <a href="#/signup" style="text-left"><small>Crear cuenta</small></a>
+          <md-button type="button" class="md-raised md-primary" ng-click="auth.login()" style="float:right">Iniciar Sesión</md-button>
+          
+        </form>
+      </md-card-content>
+      <md-divider ng-if="!$last"></md-divider>
+      <md-progress-linear md-mode="indeterminate" ng-if="auth.authLoad == true"></md-progress-linear>
+      <p style="text-align: center" ng-if="auth.authError">{{ auth.authErrorText }}</p>
+    </md-card>
   </div>
-  <div class="mdl-card__supporting-text">
-    <form>
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="email" ng-model="auth.email">
-        <label class="mdl-textfield__label">email</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="password" ng-model="auth.password">
-        <label class="mdl-textfield__label">password</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield">
-
-      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="auth.login()">Iniciar Sesión</button>
-      </div>
-    </form>
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <p ng-if="auth.authError">{{ auth.authErrorText }}</p>
-  </div>
-</div>
+</md-content>

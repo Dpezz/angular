@@ -1,6 +1,39 @@
-<form>
-    <input type="text" ng-model="signup.name"/>
-    <input type="email" ng-model="signup.email"/>
-    <input type="password" ng-model="signup.password"/>
-    <button type="button" ng-submit="signup.signup()">Registrarse</button>
-</form>
+<md-content layout-fill flex layout="row" layout-align="center center">
+  <div flex="30">
+    <md-card>
+      <img ng-src="http://dun4nx4d6jyre.cloudfront.net/assets/flat-color.png" class="md-card-image" alt="Washed Out" height="100px">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Crear Cuenta</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <form>
+        	<div layout-gt-sm="row">
+	            <md-input-container class="md-block" flex-gt-sm>
+	              	<label>Name</label>
+	              	<input ng-model="signup.name" type="text">
+	            </md-input-container>
+          	</div>
+          	<div layout-gt-sm="row">
+            	<md-input-container class="md-block" flex-gt-sm>
+              		<label>Email</label>
+              		<input ng-model="signup.email" type="email">
+            	</md-input-container>
+          	</div>
+          	<div layout-gt-sm="row">
+            	<md-input-container class="md-block" flex-gt-sm>
+              		<label>Password</label>
+              		<input ng-model="signup.password" type="password">
+            	</md-input-container>
+          	</div>
+          	<a href="#/login" style="text-left"><small>Iniciar Sesión</small></a>
+          	<md-button type="button" class="md-raised md-primary" ng-click="signup.signup()" style="float:right">Crear</md-button>
+        </form>
+      </md-card-content>
+      <md-divider ng-if="!$last"></md-divider>
+      <md-progress-linear md-mode="indeterminate" ng-if="signup.authLoad == true"></md-progress-linear>
+      <p style="text-align: center" ng-if="signup.authError">Error!</p>
+    </md-card>
+  </div>
+</md-content>

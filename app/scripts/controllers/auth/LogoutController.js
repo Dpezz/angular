@@ -6,6 +6,7 @@ angular
     	$auth.logout()
         .then(function() {
             // Desconectamos al usuario y lo redirijimos
+            localStorage.removeItem('user')
             $location.path("/login")
         });
     }
