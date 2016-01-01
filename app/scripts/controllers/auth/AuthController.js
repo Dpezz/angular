@@ -17,13 +17,13 @@ angular
             .then(function(){
                 // Si se ha logueado correctamente, lo tratamos aquí.
                 // Podemos también redirigirle a una ruta
-                dataStorage($auth, $http, options)
+                //dataStorage($auth, $http, options)
                 $location.path("/account");
             })
             .catch(function(error){
                 // Si ha habido errores llegamos a esta parte
                 vm.authError = true;
-                vm.authErrorText = error.data.error;
+                vm.authErrorText = (error.data.error)?error.data.error:error.data.message;
                 vm.authLoad = false;
             });
         }

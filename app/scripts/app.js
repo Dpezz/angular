@@ -8,9 +8,11 @@ angular
     ])
 
     .config(function($urlRouterProvider, $authProvider, $httpProvider, $provide, options) {
+
         // Parametros de configuración
         $urlRouterProvider.otherwise('/login');
-        $authProvider.loginUrl = options.endpoint_api + "/authenticate";
+        //$authProvider.loginUrl = options.endpoint_api + "/authenticate";
+        $authProvider.loginUrl = options.endpoint_api_login + "/login_check";
         $authProvider.signupUrl = options.endpoint_api + "/register";
         $authProvider.tokenName = "token";
         $authProvider.tokenPrefix = "user";

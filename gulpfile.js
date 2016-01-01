@@ -4,14 +4,6 @@ var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var wiredep = require('wiredep').stream;
 
-gulp.task('server', function(){
-  connect.server({
-    root: './app',
-    port: 3000,
-    livereload: true
-  })
-})
-
 gulp.task('webserver', function() {
   gulp.src('app')
     .pipe(webserver({
@@ -38,7 +30,7 @@ gulp.task('inject', function(){
   .pipe(gulp.dest('./app'));
 });
 
-gulp.task('wiredep', function(){
+gulp.task('wiredep', ['inject'], function(){
   gulp.src('./app/index.html')
   .pipe(wiredep({
     directory: './app/vendor',
@@ -56,4 +48,4 @@ gulp.task('watch', function(){
   gulp.watch(['./bower.json'], ['wiredep']);
 })
 
-gulp.task('default',['webserver', 'inject', 'wiredep', 'watch']);
+gulp.task('default',['webserver', 'wiredep', 'watch']);
