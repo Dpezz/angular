@@ -7,12 +7,13 @@ angular
     "ngAria"
     ])
 
-    .config(function($urlRouterProvider, $authProvider, $httpProvider, $provide, options) {
+  
 
+    .config(function($authProvider, $urlRouterProvider, $httpProvider, $provide, options) {
         // Parametros de configuración
         $urlRouterProvider.otherwise('/login');
-        //$authProvider.loginUrl = options.endpoint_api + "/authenticate";
-        $authProvider.loginUrl = options.endpoint_api_login + "/login_check";
+        $authProvider.loginUrl = options.endpoint_api + "/authenticate";
+        //$authProvider.loginUrl = options.endpoint_api_login + "/login_check";
         $authProvider.signupUrl = options.endpoint_api + "/register";
         $authProvider.tokenName = "token";
         $authProvider.tokenPrefix = "user";
@@ -21,9 +22,10 @@ angular
         $httpProvider.interceptors.push('redirectWhenLoggedOut');
     })
 
-    .run(function($rootScope, $state) {
-    	stateChangeStart($rootScope, $state);
-    });
+    .run(function($rootScope, $location, $auth) {
+        stateChangeStart($rootScope, $location, $auth);
+    })
+
 
 
 
