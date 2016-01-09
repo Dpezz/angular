@@ -2,11 +2,11 @@ angular
     .module("app")
     .controller("LogoutController", LogoutController);
 
-    function LogoutController($auth, $location) {
+    function LogoutController($auth, $localStorage, $location) {
     	$auth.logout()
         .then(function() {
             // Desconectamos al usuario y lo redirijimos
-            localStorage.removeItem('user')
-            $location.path("/login")
+            $localStorage.$reset();
+            $location.path("/login");
         });
     }

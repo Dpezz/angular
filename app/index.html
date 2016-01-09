@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="vendor/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/styles/style.css">
     <!-- endinject -->
   </head>
   <body>
@@ -21,16 +22,20 @@
     <script src="vendor/angular-animate/angular-animate.js"></script>
     <script src="vendor/angular-aria/angular-aria.js"></script>
     <script src="vendor/angular-material/angular-material.js"></script>
+    <script src="vendor/ngstorage/ngStorage.js"></script>
+    <script src="vendor/lodash/lodash.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/config/routes.js"></script>
     <script src="/scripts/config/theme.js"></script>
     <script src="/scripts/config/url.js"></script>
-    <script src="/scripts/factory/redirectWhenLoggedOut.js"></script>
-    <script src="/scripts/services/$dataStorage.js"></script>
+    <script src="/scripts/factories/$dataStorage.js"></script>
+    <script src="/scripts/factories/redirectWhenLoggedOut.js"></script>
+    <script src="/scripts/services/$restApi.js"></script>
+    <script src="/scripts/services/$setHeaders.js"></script>
+    <script src="/scripts/services/$stateChangeStart.js"></script>
     <script src="/scripts/services/$titleSubToolbar.js"></script>
-    <script src="/scripts/services/stateChangeStart.js"></script>
     <script src="/scripts/controllers/auth/AuthController.js"></script>
     <script src="/scripts/controllers/auth/LogoutController.js"></script>
     <script src="/scripts/controllers/auth/SignUpController.js"></script>

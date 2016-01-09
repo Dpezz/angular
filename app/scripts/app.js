@@ -4,10 +4,8 @@ angular
     "satellizer",
     "ngMaterial",
     "ngAnimate",
-    "ngAria"
+    "ngStorage"
     ])
-
-  
 
     .config(function($authProvider, $urlRouterProvider, $httpProvider, $provide, options) {
         // Parametros de configuración
@@ -22,8 +20,9 @@ angular
         $httpProvider.interceptors.push('redirectWhenLoggedOut');
     })
 
-    .run(function($rootScope, $location, $auth) {
-        stateChangeStart($rootScope, $location, $auth);
+    .run(function($rootScope, $location, $auth, $restApi, options) {
+        $stateChangeStart($rootScope, $location, $auth);
+        $setHeaders($auth, $restApi, options);
     })
 
 

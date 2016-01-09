@@ -3,9 +3,8 @@ angular
     .module('app')
     .factory('redirectWhenLoggedOut', redirectWhenLoggedOut);
 
-    function redirectWhenLoggedOut($q, $injector) {
+    function redirectWhenLoggedOut($q, $injector, $localStorage) {
 		return {
-
 			responseError: function(rejection) {
 
 				// Need to use $injector.get to bring in $state or else we get
@@ -20,20 +19,16 @@ angular
 				// Loop through each rejection reason and redirect to the login
 				// state if one is encountered
 				angular.forEach(rejectionReasons, function(value, key) {
-
-						if(rejection.data.error === value) {
-							// If we get a rejection corresponding to one of the reasons
-							// in our array, we know we need to authenticate the user so
-							// we can remove the current user from local storage
-							if(localStorage.length > 0)
-								localStorage.removeItem('user_token');
-
-							// Send the user to the login state so they can login
-							$state.go('login');
-						}
-
+					if(rejection.data.error === value) {
+						// If we get a rejection corresponding to one of the reasons
+						// in our array, we know we need to authenticate the user so
+						// we can remove the current user from local storage
+						//if($localStorage.length > 0)
+						$localStorage.$reset();
+						// Send the user to the login state so they can login
+						$state.go('login');
+					}
 				});
-
 				return $q.reject(rejection);
 			}
 		}

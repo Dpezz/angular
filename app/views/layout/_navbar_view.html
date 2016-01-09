@@ -21,13 +21,13 @@
     </md-button>
     <!-- end items -->
 
-    <img ng-src="http://semantic-ui.com/images/avatar2/large/kristy.png" class="md-avatar" width="48px" alt="{{item.who}}" style="border-radius:60px;margin-left:10px;" />
-
+    <img ng-src="{{layout.user.img}}" class="md-avatar" width="48px" alt="{{item.who}}" style="border-radius:60px;margin-left:10px;" />
+    &emsp;{{ layout.user.data.name }} 
     <!-- dropdown -->
     <md-menu-bar>
       <md-menu md-position-mode="target-right target" >
         <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu()">
-          <md-icon md-menu-origin class="material-icons md-light md-48"> arrow_drop_down </md-icon>
+          <md-icon md-menu-origin class="material-icons md-light md-48"> more_vert </md-icon>
         </md-button>
         <md-menu-content>
           <md-menu-item>
@@ -61,17 +61,17 @@
 <!-- start sub-toolbar -->
 <md-toolbar>
   <div class="md-toolbar-tools">
-    <md-button class="md-fab md-mini" aria-label="Go Back" ng-show="layout.breadCrumb.isBack">
+    <md-button class="md-fab md-mini md-top" aria-label="Go Back" ng-show="layout.btnBack.active">
       <md-icon class="material-icons md-light md-48"> chevron_left </md-icon>
     </md-button>
     <h2>
       <span>
-      <span ng-show="!layout.breadCrumb.isBack">&emsp;&emsp;</span>
+      <span ng-show="!layout.btnBack.active">&emsp;&emsp;</span>
       {{layout.breadCrumb.label}}
       </span>
     </h2>
     <span flex></span>
-    <md-button class="md-fab md-mini" aria-label="go New" ng-show="layout.breadCrumb.isNew">
+    <md-button class="md-fab md-mini md-top" aria-label="go New" ng-show="layout.btnNew.active">
       <md-icon class="material-icons md-light md-48"> add </md-icon>
     </md-button>
   </div>

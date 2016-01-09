@@ -2,7 +2,7 @@ angular
     .module("app")
     .controller("AuthController", AuthController);
 
-    function AuthController($auth, $location, $http, options) {
+    function AuthController($auth, $location, $dataStorage) {
         var vm = this;
         vm.authLoad = false;
         vm.authError = false;
@@ -17,7 +17,7 @@ angular
             .then(function(){
                 // Si se ha logueado correctamente, lo tratamos aquí.
                 // Podemos también redirigirle a una ruta
-                //dataStorage($auth, $http, options)
+                $dataStorage.set();
                 $location.path("/account");
             })
             .catch(function(error){

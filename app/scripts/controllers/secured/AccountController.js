@@ -4,6 +4,6 @@ angular
 
     function AccountController($scope) {
     	//Set title sub-toolbar
-    	var item = {isBack:false, isNew:false, label:"Account"}
-        titleSubToolbar($scope, item)
+    	var item = { backUrl:'app.account', newUrl:'app.account', label:"Account" };
+        $titleSubToolbar($scope, item);
     }

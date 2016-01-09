@@ -2,14 +2,28 @@ angular
     .module('app')
     .controller('LayoutController', LayoutController);
 
-    function LayoutController($mdSidenav) {
-        var vm = this
+    function LayoutController($mdSidenav, $state, $dataStorage) {
+        var vm = this;
 
         vm.breadCrumb = {
-            isBack: false,
-            isNew: false,
-            label: 'Default'
+            label: 'Default',
+            icon: ''
         };
+
+        vm.btnBack = {
+            active:false,
+            url: ''
+        };
+
+        vm.btnNew = {
+            active:false,
+            url: ''
+        };
+
+        vm.user = {
+            data: $dataStorage.get(),
+            img: '/assets/img/matthew.png'
+        }
 
         vm.close = function () {
             $mdSidenav('left').close();
@@ -19,5 +33,13 @@ angular
         };
         vm.toggleRight = function () {
             $mdSidenav('right').toggle();
+        };
+
+        vm.back =function(){
+            $state.go(vm.btnBack.url);
+        };
+
+        vm.new =function(){
+            $state.go(vm.btnNew.url);
         };
     }
