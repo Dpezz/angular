@@ -3,19 +3,18 @@ angular
     .factory('$dataStorage', $dataStorage);
 
     function $dataStorage($auth, $localStorage, $restApi) {
-        return {
+        return{
             set: function(){
+                var user = {};
                 $restApi.invoke('GET', '/authenticate',{})
                 .then(function(response) {
-                    var user = response.data.user;
+                    user = response.data.user;
                     $localStorage.user = user;
                 })
                 .catch(function(error){
+                    return error;
                 })
-            },
-
-            get: function(){
-                return $localStorage.user;
+                
             }
         }
     }

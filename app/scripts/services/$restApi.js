@@ -73,7 +73,7 @@ angular
 
                 cfg[(method === "GET" ? "params": "data")] = body;
 
-                $log.debug("["+method+" " + url + "] parameters: " , body);
+                //$log.debug("["+method+" " + url + "] parameters: " , body);
 
 
                 var http = $http(cfg)

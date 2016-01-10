@@ -2,7 +2,7 @@ angular
     .module('app')
     .controller('LayoutController', LayoutController);
 
-    function LayoutController($mdSidenav, $state, $dataStorage) {
+    function LayoutController($mdSidenav, $state, $restApi) {
         var vm = this;
 
         vm.breadCrumb = {
@@ -21,9 +21,18 @@ angular
         };
 
         vm.user = {
-            data: $dataStorage.get(),
+            data: '',
             img: '/assets/img/matthew.png'
         }
+
+        //get UserName
+        $restApi.invoke('GET', '/authenticate',{})
+        .then(function(response) {
+            vm.user.data = response.data.user;        
+        })
+        .catch(function(error){
+            return error;
+        })
 
         vm.close = function () {
             $mdSidenav('left').close();
