@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <!-- bower:css -->
     <link rel="stylesheet" href="vendor/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="vendor/angular-material-data-table/dist/md-data-table.min.css" />
     <!-- endbower -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/styles/style.css">
@@ -24,6 +25,7 @@
     <script src="vendor/angular-material/angular-material.js"></script>
     <script src="vendor/ngstorage/ngStorage.js"></script>
     <script src="vendor/lodash/lodash.js"></script>
+    <script src="vendor/angular-material-data-table/dist/md-data-table.min.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/scripts/app.js"></script>
@@ -32,15 +34,19 @@
     <script src="/scripts/config/url.js"></script>
     <script src="/scripts/factories/$dataStorage.js"></script>
     <script src="/scripts/factories/redirectWhenLoggedOut.js"></script>
+    <script src="/scripts/services/$methodService.js"></script>
     <script src="/scripts/services/$restApi.js"></script>
     <script src="/scripts/services/$setHeaders.js"></script>
     <script src="/scripts/services/$stateChangeStart.js"></script>
     <script src="/scripts/services/$titleSubToolbar.js"></script>
+    <script src="/scripts/services/$toastMsg.js"></script>
     <script src="/scripts/controllers/auth/AuthController.js"></script>
     <script src="/scripts/controllers/auth/LogoutController.js"></script>
     <script src="/scripts/controllers/auth/SignUpController.js"></script>
     <script src="/scripts/controllers/layout/LayoutController.js"></script>
     <script src="/scripts/controllers/secured/AccountController.js"></script>
+    <script src="/scripts/controllers/user/UserController.js"></script>
+    <script src="/scripts/controllers/user/UsersController.js"></script>
     <!-- endinject -->
   </body>
 </html>

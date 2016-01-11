@@ -4,7 +4,8 @@ angular
     "satellizer",
     "ngMaterial",
     "ngAnimate",
-    "ngStorage"
+    "ngStorage",
+    "md.data.table"
     ])
 
     .config(function($authProvider, $urlRouterProvider, $httpProvider, $provide, options) {

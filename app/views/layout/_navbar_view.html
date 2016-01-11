@@ -61,7 +61,7 @@
 <!-- start sub-toolbar -->
 <md-toolbar>
   <div class="md-toolbar-tools">
-    <md-button class="md-fab md-mini md-top" aria-label="Go Back" ng-show="layout.btnBack.active">
+    <md-button class="md-fab md-mini md-top" aria-label="Go Back" ng-show="layout.btnBack.active" ng-click="layout.back()">
       <md-icon class="material-icons md-light md-48"> chevron_left </md-icon>
     </md-button>
     <h2>
@@ -71,7 +71,7 @@
       </span>
     </h2>
     <span flex></span>
-    <md-button class="md-fab md-mini md-top" aria-label="go New" ng-show="layout.btnNew.active">
+    <md-button class="md-fab md-mini md-top" aria-label="go New" ng-show="layout.btnNew.active" ng-click="layout.new()">
       <md-icon class="material-icons md-light md-48"> add </md-icon>
     </md-button>
   </div>
