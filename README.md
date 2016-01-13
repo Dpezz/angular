@@ -1,8 +1,8 @@
 # angular-web
 Esquema básico de angularjs para el frontend.
 
-- intall npm
-- intall bower
+- install npm
+- install bower
 - gulp
 
 
