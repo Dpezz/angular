@@ -3,6 +3,7 @@ var webserver = require('gulp-webserver');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var wiredep = require('wiredep').stream;
+var notify = require("gulp-notify");
 
 gulp.task('webserver', function() {
   gulp.src('app')
@@ -46,6 +47,16 @@ gulp.task('watch', function(){
   gulp.watch(['./app/scripts/**/*.js'], ['inject']);
   gulp.watch(['./app/styles/**/*.css'], ['inject']);
   gulp.watch(['./bower.json'], ['wiredep']);
-})
+});
 
-gulp.task('default',['webserver', 'wiredep', 'watch']);
+gulp.task('notify', function(){
+  gulp.src("./app/test.ext")
+    .pipe(notify("Hello Gulp!"));
+
+});
+
+
+
+
+
+gulp.task('default',['webserver', 'wiredep', 'watch', 'notify']);

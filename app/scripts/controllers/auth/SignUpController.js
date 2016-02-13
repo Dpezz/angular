@@ -2,15 +2,15 @@ angular
     .module("app")
     .controller("SignUpController", SignUpController);
 
-    function SignUpController($auth, $location) {
-        var vm = this;
-        vm.authLoad = false;
-        vm.authError = false;
-        vm.authErrorText;
+function SignUpController($auth, $location) {
+    var vm = this;
+    vm.authLoad = false;
+    vm.authError = false;
+    vm.authErrorText;
 
-        vm.signup = function() {
-            vm.authLoad = true;
-            $auth.signup({
+    vm.signup = function() {
+        vm.authLoad = true;
+        $auth.signup({
                 name: vm.name,
                 email: vm.email,
                 password: vm.password
@@ -26,5 +26,5 @@ angular
                 vm.authErrorText = error.data.error;
                 vm.authLoad = false;
             });
-        }
     }
+}

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="app">
-  <head>
+<html lang="es" ng-app="app">
+
+<head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -12,10 +14,10 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="/styles/style.css">
     <!-- endinject -->
-  </head>
-  <body>
+</head>
+
+<body>
     <ui-view></ui-view>
-    
     <!-- bower:js -->
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/satellizer/satellizer.js"></script>
@@ -45,8 +47,10 @@
     <script src="/scripts/controllers/auth/SignUpController.js"></script>
     <script src="/scripts/controllers/layout/LayoutController.js"></script>
     <script src="/scripts/controllers/secured/AccountController.js"></script>
+    <script src="/scripts/controllers/user/$userService.js"></script>
     <script src="/scripts/controllers/user/UserController.js"></script>
     <script src="/scripts/controllers/user/UsersController.js"></script>
     <!-- endinject -->
-  </body>
+</body>
+
 </html>
